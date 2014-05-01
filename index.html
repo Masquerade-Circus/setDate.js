@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+		<meta charset="utf-8"/>
+		<title></title>
+		<link rel="shortcut icon" href="favicon.ico"/>
+		<style>
+			body,div,ul,li, img, a {margin:0; padding:0; outline: 0; text-decoration: none;}
+			a{color: cornflowerblue;}
+			a:hover{color: cadetblue;}
+			a.download{text-decoration:underline;}
+			html,body{height: 100%;}
+			body{font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; margin: 0 auto; padding: 2%;}
+			.description{font-size: 1.4em; display: block; text-align: center;}
+			.tc{text-align: center}
+			.texto{padding: 10px;margin-bottom: 5px;}
+			.gray{color: #666;font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;}
+			.container{border: 1em; padding: 2em; margin: 2em; text-align: center;}
+			.btn{width: 30%; margin: 0 0 0 20px; padding: 0.5em 2.5em; display: inline-block; background: #ccc; cursor:pointer;}
+			.btn:hover{background: green; color: #fff}
+			.result,.code{background: #0A0704; color: #ccc; padding: 1em; margin: 1em 2em;font-family: Monaco, Consolas, "Lucida Console", monospace;}
+			.result{background: #ccc; color: #0A0704;}
+			img{width: 100%; height: auto;}
+			.button{margin: 0.5em; padding: 0.5em 1.5em; background: #ccc; color: #000; float: left; cursor: pointer;}
+			.button:hover{background: #000; color: #ccc}
+			.active{background: green; color: #fff}
+			.reset:hover{background: red; color: #fff;}
+			.github{position: absolute; top:0; right: 0; display:block;}
+			.legal{position: fixed; bottom:0; right: 0; background: #fff; padding: 0.2em 1.5em; box-shadow: 0 0 0.3em; text-align: right;}
+			.clear{clear: both;}
+			
+			.code{margin-bottom: 0;}
+			.result{margin-top: 0;}
+		 </style>
+		<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="setDate.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var date = new Date();
+				$('.setDate1').setDate();
+				$('.setDate2').setDate({date: "October 23, 1975 11:13:00"});
+				$('.setDate3').setDate({date: [79,5,24]});
+				$('.setDate4').setDate({date: 1371146201884});
+				$('.setDate5').setDate({date: date});
+				$('.setDate6').setDate({format: "Today is: +l +j of +F of +Y. And the time is: +G:+ii +a."});
+				$('.setDate7').setDate({
+					format: "Hoy es: +l +j de +F de +Y. Y la hora es: +H:+ii +a.", 
+					months: ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"], 
+					days: ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"]
+				});
+				
+			});
+		</script>
+	</head>
+<body>
+				<a href="http://github.com/Masquerade-Circus/setDate.js" title="Fork me on Github" class="github" target="_blank"><img src="github.png" alt="Github" width="149" height="149"></a>
+				<h1 class="tc"><b>setDate</b></h1>
+				<b class="description">
+					Small 1kb jQuery plugin to display formatted dates.
+					<br><br><a href="https://github.com/Masquerade-Circus/setDate.js/archive/master.zip" title="Download" class="download" target="_blank">Download</a>
+				</b>
+				
+				<br><br><h2>How to use: </h2>
+				Call the plugin on the set of elements to show the formated date. 
+				
+				<br><br><h2>Options: </h2>
+				<div class="code">
+					$(selector).setDate(options);
+					<br><br>$('elem').setDate({
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;	date: String||Array||Miliseconds||DateObject,
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;	format: string,
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;	months: array,
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;	days: array						
+					<br>});
+				</div>
+				<div class="result">Sets the date in the set of elements.</div>
+				<div class="code">
+					$.formatDate(options);
+				</div>
+				<div class="result">Returns the formated date. Options are the same as above.</div>
+				
+				<br><br><h2>Format Parameters: </h2>
+				All parameters must be preceded by a plus sign to avoid confusion with their respective chars.
+				<br><br>This parameters are:<br><br>
+				<div class="result">
+					<b>+Y:</b> A full numeric representation of a year, 4 digits.
+					<br><b>+y:</b> A two digit representation of a year.
+					<br><b>+F:</b> A full textual representation of a month.
+					<br><b>+M:</b> A short textual representation of a month, three letters.
+					<br><b>+m:</b> Numeric representation of a month, with leading zeros.
+					<br><b>+n:</b> Numeric representation of a month, without leading zeros.
+					<br><b>+l:</b> (Lowercase 'L') A full textual representation of the day of the week.
+					<br><b>+D:</b> A textual representation of a day, three letters.
+					<br><b>+d:</b> Day of the month, 2 digits with leading zeros.
+					<br><b>+j:</b> Day of the month without leading zeros.
+					<br><b>+G:</b> 24-hour format of an hour without leading zeros.
+					<br><b>+g:</b> 12-hour format of an hour without leading zeros.
+					<br><b>+H:</b> 24-hour format of an hour with leading zeros.
+					<br><b>+h:</b> 12-hour format of an hour with leading zeros.
+					<br><b>+i:</b> Minutes without leading zeros.
+					<br><b>+ii:</b> Minutes with leading zeros.
+					<br><b>+s:</b> Seconds without leading zeros.
+					<br><b>+ss:</b> Seconds with leading zeros.
+					<br><b>+a:</b> Lowercase 'am' or 'pm'.
+					<br><b>+A:</b> Uppercase 'AM' or 'PM'.
+				</div>
+				
+				<br><br><h2>Examples: </h2>
+				<br class="clear">
+				<b>Default:</b>
+				<div class="code">$('.setDate1').setDate();</div>
+				<div class="setDate1 result"></div>
+				
+				<b>Date string:</b>
+				<div class="code">$('.setDate2').setDate({date: "October 23, 1975 11:13:00"});</div>
+				<div class="setDate2 result"></div>
+				
+				<b>Date array:</b>
+				<div class="code">$('.setDate3').setDate({date: [79,5,24]});</div>
+				<div class="setDate3 result"></div>
+				
+				<b>Miliseconds:</b>
+				<div class="code">$('.setDate4').setDate({date: 1371146201884});</div>
+				<div class="setDate4 result"></div>
+				
+				<b>Date object:</b>
+				<div class="code">
+					var date = new Date();
+					<br>$('.setDate5').setDate({date: date});
+				</div>
+				<div class="setDate5 result"></div>
+				
+				<b>Custom format:</b>
+				<div class="code">$('.setDate6').setDate({format: "Today is: +l +j of +F of +Y. And the time is: +G:+ii +a."});</div>
+				<div class="setDate6 result"></div>
+				
+				<b>Custom language:</b>
+				<div class="code">
+					$('.setDate7').setDate({
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;	format: "Hoy es: +l +j de +F de +Y. Y la hora es: +H:+ii +a.", 
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;	months: ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"], 
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;	days: ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"]
+					<br>});
+				</div>
+				<div class="setDate7 result"></div>
+				
+				<br class="clear">
+				<br><br><h2>Legal: </h2>
+				Author & copyright (c) 2013: <a href="http://masquerade-circus.creaken.com" title="Masquerade Circus" target="_blank">Masquerade Circus</a>
+				<br>Dual <a href="http://opensource.org/licenses/MIT" title="MIT" target="_blank">MIT</a> & <a href="http://opensource.org/licenses/GPL-2.0" title="GPLv2" target="_blank">GPLv2</a> license
+				<br><br><br><br>
+</body>
+</html>

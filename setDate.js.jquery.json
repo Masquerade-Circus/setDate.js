@@ -1,0 +1,29 @@
+{
+  "name": "setDate.js",
+  "title": "setDate",
+  "description": "Small 1kb jQuery plugin to display formatted dates.",
+  "keywords": [
+    "date",
+	"time",
+    "format",
+    "content",
+	"custom"
+    ],
+  "version": "1.0.0",
+  "author": {
+    "name": "Masquerade Circus",
+    "url": "http://masquerade-circus.creaken.com"
+  },
+  "licenses": [{
+    "type": "MIT",
+    "url": "http://opensource.org/licenses/MIT"
+  }, {
+    "type": "GPLv2",
+    "url": "http://opensource.org/licenses/GPL-2.0"
+  }],
+  "homepage": "https://github.com/Masquerade-Circus/setDate.js",
+  "demo": "http://masquerade-circus.creaken.com/Plugins/setDate/",
+  "dependencies": {
+    "jquery": ">=1.4.x"
+  }
+}
