@@ -4,7 +4,7 @@ setDate.js
 Small 1kb jQuery plugin to display formatted dates.
 
 ## Demo
-http://masquerade-circus.creaken.com/Plugins/setDate/
+http://masquerade-circus.net/myPlugins/setDate/
 
 ##How to use:
 Call the plugin on the set of elements to show the formated date. 
@@ -53,5 +53,5 @@ This parameters are:
 * **+A:** Uppercase 'AM' or 'PM'.
 
 # Legal
-Author & copyright (c) 2013: [Masquerade Circus](http://masquerade-circus.creaken.com)
+Author & copyright (c) 2013: [Masquerade Circus](http://masquerade-circus.net)
 Dual [MIT](http://opensource.org/licenses/MIT) & [GPLv2](http://opensource.org/licenses/GPL-2.0) license
